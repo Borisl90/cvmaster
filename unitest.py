@@ -1,6 +1,8 @@
 import unittest
+
 import cn_function
 import hr_function
+
 
 class TestCv(unittest.TestCase):
 
@@ -50,6 +52,7 @@ class TestCv(unittest.TestCase):
         self.assertEqual(cn_function.change_mobile("529285890", "new_mobile"), True)
         self.assertEqual(cn_function.change_mobile("529285890", "xxxxxxxx"), True)
         self.assertEqual(cn_function.change_mobile("000000000", "-------"), False)
+
 
 if __name__ == '__main__':
     unittest.main()

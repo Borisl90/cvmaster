@@ -1,55 +1,134 @@
-import unittest
-import cn_function
-import hr_function
+print('hr file')
+import json
+import textwrap
 
-class TestCv(unittest.TestCase):
+def printall():
+    try:
+        with open('DATA.json') as f:
+            data = json.load(f)
+    except Exception as e:
+        print(e)
+    else:
+        for person in data:
+            print('personal_summary:')
+            print("     ID:" + person['personal_summary']['id'])
+            print("     Name:" + person['personal_summary']['name'])
+            print("     Email:" + person['personal_summary']['email'])
+            print("     Gender:" + person['personal_summary']['gender'])
+            print("     Pic:" + person['personal_summary']['pic'])
+            print('\nAcademic history:')
+            print('\n'.join(textwrap.wrap(person['academic_history'], 64)))
+            print('\nExperience:')
+            print('\n'.join(textwrap.wrap(person['experience'], 64)))
+            print('\nSkills:')
+            print('\n'.join(textwrap.wrap(person['skills'], 64)))
+            print('\nCareer history:')
+            print('\n'.join(textwrap.wrap(person['career_history'], 64)))
+            print('\nReferences:')
+            print('\n'.join(textwrap.wrap(person['references'], 64)))
+            print('\nHR:')
+            print("     Status:" + str(person['HR']['status']))
+            print("     Notes:" + person['HR']['notes'])
+        f.close()
+        return True
 
-    # for HR:
-    def test_editstatus(self):
-        self.assertEqual(hr_function.editstatus("529285890", '0'), True)
-        self.assertEqual(hr_function.editstatus("529285890", '2'), True)
-        self.assertEqual(hr_function.editstatus("529285890", '3'), True)
-        self.assertEqual(hr_function.editstatus("529285890", '1'), True)
-        self.assertEqual(hr_function.editstatus("529285890", '0'), True)
-        self.assertEqual(hr_function.editstatus("000000000", '1'), False)
+def printid(id):
+    try:
+        with open('DATA.json') as f:
+            data = json.load(f)
+    except Exception as e:
+        print(e)
+    else:
+        for person in data:
+            if person['personal_summary']['id'] == str(id):
+                print('personal_summary:')
+                print("     ID:" + person['personal_summary']['id'])
+                print("     Name:" + person['personal_summary']['name'])
+                print("     Email:" + person['personal_summary']['email'])
+                print("     Gender:" + person['personal_summary']['gender'])
+                print("     Pic:" + person['personal_summary']['pic'])
+                print('\nAcademic history:')
+                print('\n'.join(textwrap.wrap(person['academic_history'], 64)))
+                print('\nExperience:')
+                print('\n'.join(textwrap.wrap(person['experience'], 64)))
+                print('\nSkills:')
+                print('\n'.join(textwrap.wrap(person['skills'], 64)))
+                print('\nCareer history:')
+                print('\n'.join(textwrap.wrap(person['career_history'], 64)))
+                print('\nReferences:')
+                print('\n'.join(textwrap.wrap(person['references'], 64)))
+                print('\nHR:')
+                print("     Status:" + str(person['HR']['status']))
+                print("     Notes:" + person['HR']['notes'])
+                # idmenu(person)
+                f.close()
+                return True
+        f.close()
+        print("this id is not in our data")
+        return False
 
-    def test_printall(self):
-        self.assertEqual(hr_function.printall(), True)
+def editstatus(id,select):
+    try:
+        with open('DATA.json') as f:
+            data = json.load(f)
+    except Exception as e:
+        print(e)
+    else:
+        for person in data:
+            if person['personal_summary']['id'] == str(id):
+                person['HR']['status'] = str(select)
+                print("candidate status was cahnge to" + select)
+                # json.dumps(data, f)
+                f.close()
+                try:
+                    f = open('DATA.json', 'w')
+                except Exception as e:
+                    print(e)
+                else:
+                    json.dump(data, f)
+                    f.close()
+                    return True
+        f.close()
+        return False
 
-    def test_printid(self):
-        self.assertEqual(hr_function.printid("529285890"), True)
-        self.assertEqual(hr_function.printid("000000000"), False)
+def editnotes(id,select):
+    try:
+        with open('DATA.json') as f:
+            data = json.load(f)
+    except Exception as e:
+        print(e)
+    else:
+        for person in data:
+            if person['personal_summary']['id'] == str(id):
+                person['HR']['notes'] = select
+                print("candidate notes was cahnge !")
+                f.close()
+                try:
+                    f = open('DATA.json', 'w')
+                except Exception as e:
+                    print(e)
+                else:
+                    json.dump(data, f)
+                    f.close()
+                    return True
+        f.close()
+        return False
 
-    def test_searchpro(self):
-        self.assertEqual(hr_function.searchpro("id"), True)
-        self.assertEqual(hr_function.searchpro("xxxxxxx"), False)
-        self.assertEqual(hr_function.searchpro(" "), True)
-
-    def test_editnotes(self):
-        self.assertEqual(hr_function.editnotes("529285890", '0'), True)
-        self.assertEqual(hr_function.editstatus("529285890", '2'), True)
-        self.assertEqual(hr_function.editstatus("529285890", '0'), True)
-        self.assertEqual(hr_function.editstatus("000000000", '1'), False)
-
-    # for CV:
-    def test_login(self):
-        self.assertEqual(cn_function.login("cn529285890", "cn529285890"), True)
-        self.assertEqual(cn_function.login("529285890", "cn529285890"), False)
-        self.assertEqual(cn_function.login("000000000", "cn000000000"), False)
-
-    def test_delete_cv(self):
-        self.assertEqual(cn_function.delete_cv("529285890"), False)
-        self.assertEqual(cn_function.delete_cv("00000000"), False)
-
-    def test_change_mail(self):
-        self.assertEqual(cn_function.change_mail("529285890", "new_mail"), True)
-        self.assertEqual(cn_function.change_mail("529285890", "xxxxxx"), True)
-        self.assertEqual(cn_function.change_mail("000000000", "-----"), False)
-
-    def test_mobile(self):
-        self.assertEqual(cn_function.change_mobile("529285890", "new_mobile"), True)
-        self.assertEqual(cn_function.change_mobile("529285890", "xxxxxxxx"), True)
-        self.assertEqual(cn_function.change_mobile("000000000", "-------"), False)
-
-if __name__ == '__main__':
-    unittest.main()
+def searchpro(pro):
+    try:
+        with open('DATA.json') as f:
+            data = json.load(f)
+    except Exception as e:
+        print(e)
+    else:
+        print ("the id's with this professional are:\n")
+        flag = 0
+        for person in data:
+            if pro in person['career_history']:
+                flag = 1
+                print("     ID:" + person['personal_summary']['id'])
+        if flag == 1:
+            return True
+        else:
+            print("None,there is no such professional in this data")
+            return False
