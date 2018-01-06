@@ -1,5 +1,7 @@
 import click
+
 import hr_function
+
 
 @click.group(chain=True)
 def cli():

@@ -2,6 +2,7 @@ print('hr file')
 import json
 import textwrap
 
+
 def printall():
     try:
         with open('DATA.json') as f:
@@ -31,6 +32,7 @@ def printall():
             print("     Notes:" + person['HR']['notes'])
         f.close()
         return True
+
 
 def printid(id):
     try:
@@ -67,7 +69,8 @@ def printid(id):
         print("this id is not in our data")
         return False
 
-def editstatus(id,select):
+
+def editstatus(id, select):
     try:
         with open('DATA.json') as f:
             data = json.load(f)
@@ -91,7 +94,8 @@ def editstatus(id,select):
         f.close()
         return False
 
-def editnotes(id,select):
+
+def editnotes(id, select):
     try:
         with open('DATA.json') as f:
             data = json.load(f)
@@ -114,6 +118,7 @@ def editnotes(id,select):
         f.close()
         return False
 
+
 def searchpro(pro):
     try:
         with open('DATA.json') as f:
@@ -121,7 +126,7 @@ def searchpro(pro):
     except Exception as e:
         print(e)
     else:
-        print ("the id's with this professional are:\n")
+        print("the id's with this professional are:\n")
         flag = 0
         for person in data:
             if pro in person['career_history']:
