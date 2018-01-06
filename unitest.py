@@ -2,7 +2,6 @@ import unittest
 import cn_function
 import hr_function
 
-
 class TestCv(unittest.TestCase):
 
     # for HR:
