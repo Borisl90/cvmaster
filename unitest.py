@@ -1,36 +1,36 @@
 import unittest
 import cn_function
-import hr
+import hr_function
 
 
 class TestCv(unittest.TestCase):
 
     # for HR:
     def test_editstatus(self):
-        self.assertEqual(hr.editstatus("529285890", '0'), True)
-        self.assertEqual(hr.editstatus("529285890", '2'), True)
-        self.assertEqual(hr.editstatus("529285890", '3'), True)
-        self.assertEqual(hr.editstatus("529285890", '1'), True)
-        self.assertEqual(hr.editstatus("529285890", '0'), True)
-        self.assertEqual(hr.editstatus("000000000", '1'), False)
+        self.assertEqual(hr_function.editstatus("529285890", '0'), True)
+        self.assertEqual(hr_function.editstatus("529285890", '2'), True)
+        self.assertEqual(hr_function.editstatus("529285890", '3'), True)
+        self.assertEqual(hr_function.editstatus("529285890", '1'), True)
+        self.assertEqual(hr_function.editstatus("529285890", '0'), True)
+        self.assertEqual(hr_function.editstatus("000000000", '1'), False)
 
     def test_printall(self):
-        self.assertEqual(hr.printall(), True)
+        self.assertEqual(hr_function.printall(), True)
 
     def test_printid(self):
-        self.assertEqual(hr.printid("529285890"), True)
-        self.assertEqual(hr.printid("000000000"), False)
+        self.assertEqual(hr_function.printid("529285890"), True)
+        self.assertEqual(hr_function.printid("000000000"), False)
 
     def test_searchpro(self):
-        self.assertEqual(hr.searchpro("id"), True)
-        self.assertEqual(hr.searchpro("xxxxxxx"), False)
-        self.assertEqual(hr.searchpro(" "), True)
+        self.assertEqual(hr_function.searchpro("id"), True)
+        self.assertEqual(hr_function.searchpro("xxxxxxx"), False)
+        self.assertEqual(hr_function.searchpro(" "), True)
 
     def test_editnotes(self):
-        self.assertEqual(hr.editnotes("529285890", '0'), True)
-        self.assertEqual(hr.editstatus("529285890", '2'), True)
-        self.assertEqual(hr.editstatus("529285890", '0'), True)
-        self.assertEqual(hr.editstatus("000000000", '1'), False)
+        self.assertEqual(hr_function.editnotes("529285890", '0'), True)
+        self.assertEqual(hr_function.editstatus("529285890", '2'), True)
+        self.assertEqual(hr_function.editstatus("529285890", '0'), True)
+        self.assertEqual(hr_function.editstatus("000000000", '1'), False)
 
     # for CV:
     def test_login(self):

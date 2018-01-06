@@ -1,5 +1,5 @@
 import click
-import hr
+import hr_function
 
 
 @click.group(chain=True)
@@ -9,13 +9,13 @@ def cli():
 
 @cli.command('printall', help="print data")
 def cli_printall():
-    hr.printall()
+    hr_function.printall()
 
 
 @cli.command('sr', help="print")
 @click.option('--id', prompt='chose id', help="id")
 def cli_printid(id):
-    hr.printid(id)
+    hr_function.printid(id)
 
 
 @cli.command('edit status', help="edit status")
@@ -23,20 +23,20 @@ def cli_printid(id):
 @click.option('--select', prompt='chose the new status of this candidate', type=click.Choice(['0', '1', '2', '3']),
               help="edit status")
 def cli_editstatus(id, select):
-    hr.editstatus()
+    hr_function.editstatus()
 
 
 @cli.command('edit status', help="edit status")
 @click.option('--id', prompt='chose id', help="id")
 @click.option('--select', prompt='candidate notes', help="edit notes")
 def cli_editnotes(id, select):
-    hr.editnotes(id, select)
+    hr_function.editnotes(id, select)
 
 
 @cli.command('searchpro', help="search professional")
 @click.option('--pro', prompt='professional', help="search professional")
 def cli_searchpro(pro):
-    hr.searchpro(pro)
+    hr_function.searchpro(pro)
 
 
 
