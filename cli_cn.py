@@ -47,6 +47,12 @@ def cli_changemail(id, new_mail):
 def cli_changemail(id, new_mobile):
     cn_function.change_mobile(id, new_mobile)
 
+# akaton 3
+@cli.command('change mobile', help='change the mobile of the candidate')
+@click.option('--id', prompt='id', help='the id of the candidate we want to change mobile')
+@click.option('--new_time', prompt='time to reach', help='time to reach')
+def cli_changtime(id, new_time):
+    cn_function.change_time(id, new_time)
 
 if __name__ == '__main__':
     cli()

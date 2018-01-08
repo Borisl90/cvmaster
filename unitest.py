@@ -33,7 +33,7 @@ class TestCv(unittest.TestCase):
         self.assertEqual(hr_function.editstatus("529285890", '0'), True)
         self.assertEqual(hr_function.editstatus("000000000", '1'), False)
 
-    # for CV:
+    # for CN:
     def test_login(self):
         self.assertEqual(cn_function.login("cn529285890", "cn529285890"), True)
         self.assertEqual(cn_function.login("529285890", "cn529285890"), False)
@@ -52,6 +52,11 @@ class TestCv(unittest.TestCase):
         self.assertEqual(cn_function.change_mobile("529285890", "new_mobile"), True)
         self.assertEqual(cn_function.change_mobile("529285890", "xxxxxxxx"), True)
         self.assertEqual(cn_function.change_mobile("000000000", "-------"), False)
+    # akaton 3
+    def test_mobile(self):
+        self.assertEqual(cn_function.change_time("529285890", "morinng"), True)
+        self.assertEqual(cn_function.change_time("529285890", "10:00-12:00"), True)
+        self.assertEqual(cn_function.change_time("000000000", "-------"), False)
 
 
 if __name__ == '__main__':

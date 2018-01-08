@@ -3,6 +3,7 @@ import json
 import textwrap
 
 
+# akaton 3
 def printall():
     try:
         with open('DATA.json') as f:
@@ -16,6 +17,7 @@ def printall():
             print("     Name:" + person['personal_summary']['name'])
             print("     Email:" + person['personal_summary']['email'])
             print("     Gender:" + person['personal_summary']['gender'])
+            print("     Gender:" + person['personal_summary']['time_to_reach'])
             print("     Pic:" + person['personal_summary']['pic'])
             print('\nAcademic history:')
             print('\n'.join(textwrap.wrap(person['academic_history'], 64)))
@@ -33,7 +35,7 @@ def printall():
         f.close()
         return True
 
-
+# akaton 3
 def printid(id):
     try:
         with open('DATA.json') as f:
@@ -48,6 +50,7 @@ def printid(id):
                 print("     Name:" + person['personal_summary']['name'])
                 print("     Email:" + person['personal_summary']['email'])
                 print("     Gender:" + person['personal_summary']['gender'])
+                print("     Gender:" + person['personal_summary']['time_to_reach'])
                 print("     Pic:" + person['personal_summary']['pic'])
                 print('\nAcademic history:')
                 print('\n'.join(textwrap.wrap(person['academic_history'], 64)))
