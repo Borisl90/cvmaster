@@ -74,7 +74,25 @@ def delete_cv(id):
             print("this id doesnt exist or status!=2")
             return False
 
-
+# akaton 3
+def change_time(id, new_time):
+    flag = 0
+    data = open_file()
+    for i in data:
+        if i['personal_summary']['id'] == id:
+            flag = 1
+            i['personal_summary']['time_to_reach'] = new_time
+            break
+    try:
+        f = open('DATA.json', 'w')
+    except Exception as e:
+        print(e)
+    else:
+        json.dump(data, f)
+        f.close()
+        if flag:
+            return True
+        return False
 def change_mobile(id, new_mobile):
     flag = 0
     data = open_file()

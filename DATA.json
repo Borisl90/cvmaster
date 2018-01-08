@@ -9,6 +9,7 @@
     "personal_summary": {
       "id": "820614469",
       "gender": "Male",
+      "time_to_reach": "10:00-12:00",
       "password": "cn820614469",
       "name": "Winni Kinloch",
       "email": "wkinloch0@example.com",
@@ -29,6 +30,7 @@
     "personal_summary": {
       "id": "935968271",
       "gender": "Male",
+      "time_to_reach": "11:00-18:00",
       "password": "cn935968271",
       "name": "Lanni Southcomb",
       "email": "lsouthcomb1@vinaora.com",
@@ -49,6 +51,7 @@
     "personal_summary": {
       "id": "529285890",
       "gender": "Female",
+      "time_to_reach": "18:00-19:00",
       "password": "cn529285890",
       "name": "Graehme Franchi",
       "email": "xxxxxx",
@@ -69,6 +72,7 @@
     "personal_summary": {
       "id": "053079793",
       "gender": "Male",
+      "time_to_reach": "17:00-18:00",
       "password": "cn053079793",
       "name": "Paolo Tejero",
       "email": "ptejero3@google.com.au",
@@ -89,6 +93,7 @@
     "personal_summary": {
       "id": "838497480",
       "gender": "Male",
+      "time_to_reach": "8:00-12:00",
       "password": "cn838497480",
       "name": "Candide Legon",
       "email": "clegon4@shop-pro.jp",
@@ -109,6 +114,7 @@
     "personal_summary": {
       "id": "344337992",
       "gender": "Female",
+      "time_to_reach": "10:00-12:00",
       "password": "cn344337992",
       "name": "Rufe Chace",
       "email": "rchace5@baidu.com",
@@ -129,6 +135,7 @@
     "personal_summary": {
       "id": "637348944",
       "gender": "Female",
+      "time_to_reach": "10:00-19:00",
       "password": "cn637348944",
       "name": "Meade Andrusov",
       "email": "mandrusov6@shop-pro.jp",
@@ -149,6 +156,7 @@
     "personal_summary": {
       "id": "019606026",
       "gender": "Female",
+      "time_to_reach": "10:00-17:00",
       "password": "cn019606026",
       "name": "Nanine Reucastle",
       "email": "nreucastle7@51.la",
@@ -169,6 +177,7 @@
     "personal_summary": {
       "id": "755933412",
       "gender": "Male",
+      "time_to_reach": "10:30-12:00",
       "password": "cn755933412",
       "name": "Roseann Greve",
       "email": "rgreve8@fotki.com",
@@ -189,6 +198,7 @@
     "personal_summary": {
       "id": "337633013",
       "gender": "Male",
+      "time_to_reach": "10:00-12:00",
       "password": "cn337633013",
       "name": "Gunner Regorz",
       "email": "gregorz9@ovh.net",
